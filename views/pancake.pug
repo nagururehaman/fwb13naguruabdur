@@ -2,44 +2,40 @@ extends layout
 
 block content
   h1= title
-  p Welcome to the PanCakes pug
+  p Welcome to the Pancake pug
    div(class="container-fluid")
         div(class="row")
             -
                 let pancake = [
                     {
-                        "Itemname": "Strawberry Pancake",
-                        "Colour": "Red",
-                        "Size": "Medium"
-                         "price": 10;
+                        "Itemname": "Choclate Pancake",
+                        "Quantity": 2,
+                        "price": 10
                     },
                     {
-                        "Itemname": "Choclate Pancake",
-                        "Colour": "Brown",
-                        "Size": "Small"
-                         "price": 8;
+                        "Itemname": "Strawberry Pancake",
+                        "Quantity": 3,
+                        "price": 12.40
                     },
-                    {"Itemname": "Blueberry Pancake",
-                        "Colour": "Blue",
-                        "Size": "Large"
-                         "price": 12;
+                    {
+                        "Itemname": "Blueberry Pancake",
+                        "Quantity": 1,
+                        "price": 9.45
                     },                   
                 ]
-            each v,index in pancake 
+            each v,index in pancake
                 table(style='width:100%', border='1')
                   tr 
                     div(class="col-sm-2" onclick=`buy(${index})`) #{v.Itemname}
                     br
                     br
-                    div(class="col-sm-2" onclick=`buy(${index})`) #{v.Colour}
-                    br
-                    br
-                    div(class="col-sm-2" onclick=`buy(${index})`) #{v.Size}
+                    div(class="col-sm-2" onclick=`buy(${index})`) #{v.Quantity}
                     br
                     br
                     div(class="col-sm-2" onclick=`buy(${index})`) #{v.price}
   script.                
         function buy(intemNo)
         {
-              alert(`you purchased PanCake ${intemNo + 1}`)
+              alert(`Your Pancake is ${intemNo + 1}`)
         }
+
